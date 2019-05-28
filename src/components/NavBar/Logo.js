@@ -6,7 +6,7 @@ import logoWhite from '../../assets/fcc.png';
 export default function Logo() {
   return (
     <>
-      <StyledLogo className="logoWhite" src={logoWhite} alt="FCC Logo" />
+      <StyledLogo src={logoWhite} alt="FCC Logo" />
     </>
   );
 }

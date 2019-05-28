@@ -4,7 +4,9 @@ import styled from "styled-components";
 import { green, white } from "../../utilities";
 
 import Logo from "./Logo";
-import BurgerMenu from './BurgerMenu';
+import LogoGreen from "./LogoGreen";
+import OpenIcon from './OpenIcon';
+import CloseIcon from "./CloseIcon";
 import Menu from "./Menu";
 
 class NavBar extends Component {
@@ -20,8 +22,15 @@ class NavBar extends Component {
     return (
       <NavWrapper>
         <StyledNavbar>
-          <Logo />
-          <BurgerMenu toggle={this.handleNavbar} color={this.state.navbarOpen} />
+          { !this.state.navbarOpen ? 
+          <>
+            <Logo />
+            <OpenIcon toggle={this.handleNavbar} color={this.state.navbarOpen} /> 
+          </> : <>
+            <LogoGreen />
+            <CloseIcon toggle={this.handleNavbar} color={this.state.navbarOpen} />
+          </>
+          }
           <Menu toggle={this.state} />
         </StyledNavbar>
       </NavWrapper>
