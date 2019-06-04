@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import logoWhite from '../../assets/fcc.png';
+import logoWhite from '../../assets/fcca.png';
 
 export default function Logo() {
   return (
@@ -12,6 +12,6 @@ export default function Logo() {
 }
 
 const StyledLogo = styled.img`
-  height: 20px;
+  height: 35px;
   align-self: center;
 `;
