@@ -1,5 +1,7 @@
-import colors from './colors';
+import colors from './Colors';
+import elevation from "./Elevation";
 
-export * from './colors';
+export * from './Colors';
+export * from "./Breakpoints";
 
-export { colors };
+export { colors, elevation };
