@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { green, white } from "../../utilities";
+import { gray00 } from "../../utilities";
 
 const OpenIcon = (props) => {
 
@@ -34,7 +34,7 @@ const StyledIcon = styled.div`
     border-radius: 20px;
     height: 4px;
     width: 35px;
-    background: ${white};
+    background: ${gray00};
     position: absolute;
     display: block;
     content: "";

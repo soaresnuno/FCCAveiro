@@ -17,7 +17,7 @@ export const above = Object.keys(size).reduce((acc, label) => {
 
 export const below = Object.keys(size).reduce((acc, label) => {
   acc[label] = (...args) => css`
-    @media (max-width: ${size[label] / 16}em) {
+    @media (max-width: ${size[label]}) {
       ${css(...args)}
     }
   `

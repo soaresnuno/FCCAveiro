@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
 
-import { green, white } from "../../utilities";
+import { darkGreen, gray00 } from "../../utilities";
 
 import Logo from "./Logo";
 import LogoGreen from "./LogoGreen";
@@ -51,7 +51,7 @@ const StyledNavbar = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
-  color: ${white};
-  background-color: ${green};
+  color: ${gray00};
+  background-color: ${darkGreen};
   padding: 13px 5%;
 `;

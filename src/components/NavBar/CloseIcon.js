@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { green, white } from "../../utilities";
+import { gray00 } from "../../utilities";
 
 const CloseIcon = (props) => {
 
@@ -34,7 +34,7 @@ const StyledIcon = styled.div`
     border-radius: 1px;
     height: 3px;
     width: 30px;
-    background: ${white};
+    background: ${gray00};
     position: absolute;
     display: block;
     content: "";
