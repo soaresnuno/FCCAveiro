@@ -6,12 +6,12 @@ import logoWhite from '../../assets/fcca.png';
 export default function Logo() {
   return (
     <>
-      <StyledLogo className="logoWhite" src={logoWhite} alt="FCC Logo" />
+      <StyledLogo src={logoWhite} alt="FCC Logo" />
     </>
   );
 }
 
 const StyledLogo = styled.img`
-  height: 35px;
+  height: 30px;
   align-self: center;
 `;
