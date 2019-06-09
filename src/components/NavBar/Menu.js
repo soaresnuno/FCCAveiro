@@ -1,23 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 
-import { darkWhite, green } from '../../utilities';
+import { gray10, darkGreen } from "../../utilities";
 
 const Menu = (props) => {
   const { x } = useSpring({
     x: props.toggle.navbarOpen ? 0 : 100,
-    config: config.default,
   });
 
   return (
-    <MenuWrapper className="checkout" style={{ pointerEvents: props.toggle.navbarOpen ? 'all' : 'none' }}>
+    <MenuWrapper style={{ pointerEvents: props.toggle.navbarOpen ? 'all' : 'none' }}>
       <CheckoutLeft style={{ transform: x.interpolate(x => `translate3d(${x * -1}%, 0, 0)`) }}>
         <LinkWrapper>
-          <li><h3>Link 1</h3></li>
-          <li><h3>Link 2</h3></li>
-          <li><h3>Link 3</h3></li>
-          <li><h3>Link 4</h3></li>
+          <li><h5>Próximo Meet</h5></li>
+          <li><h5>Quem Somos  </h5></li>
+          <li><h5>Meetups</h5></li>
+          <li><h5>Junta-te a nós</h5></li>
         </LinkWrapper>
       </CheckoutLeft>
       <CheckoutRight style={{ transform: x.interpolate(x => `translate3d(${x}%, 0, 0)`) }} />
@@ -39,23 +38,26 @@ const MenuWrapper = styled.div`
 const CheckoutLeft = styled(animated.div)`
   width: 30%;
   height: 100%;
-  background: ${darkWhite};
+  background: ${gray10};
 `;
 
 
 const CheckoutRight = styled(animated.div)`
   width: 70%;
   height: 100%;
-  background: ${green};
+  background: ${darkGreen};
 `;
 
 const LinkWrapper = styled.ul`
   margin-top: 50%;
-  margin-left: 30%;
+  margin-left: 25px;
 
   & li {
     list-style-type: none;
-    line-height: 2;
-    color: ${green};
+    color: ${darkGreen};
+
+    & h5 {
+      line-height: 15px;
+    }
   }
 `;

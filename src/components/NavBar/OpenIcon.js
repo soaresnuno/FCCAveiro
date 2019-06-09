@@ -1,23 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { green, white } from "../../utilities";
+import { gray00 } from "../../utilities";
 
-export default function BurgerMenu(props) {
+const OpenIcon = (props) => {
 
   return (
-    <BurgerIcon onClick={props.toggle}>
+    <StyledIcon onClick={props.toggle}>
       <span />
-    </BurgerIcon>
+    </StyledIcon>
   );
 }
 
-const BurgerIcon = styled.div`
+export default OpenIcon;
+
+const StyledIcon = styled.div`
   align-self: center;
   justify-self: right;
   cursor: pointer;
   padding: 10px 35px 16px 0px;
   z-index: 15;
+  animation: fadein 1s;
+
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
   
   & span,
   & span:before,
@@ -26,7 +34,7 @@ const BurgerIcon = styled.div`
     border-radius: 20px;
     height: 4px;
     width: 35px;
-    background: ${white};
+    background: ${gray00};
     position: absolute;
     display: block;
     content: "";
@@ -36,9 +44,5 @@ const BurgerIcon = styled.div`
   }
   & span:after {
     bottom: -10px;
-  }
-
-  @media all and (max-width: 768px) {
-    display: inline;
   }
 `;

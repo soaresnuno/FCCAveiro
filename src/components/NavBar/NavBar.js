@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
 
-import { green, white } from "../../utilities";
+import { darkGreen, gray00 } from "../../utilities";
 
 import Logo from "./Logo";
-import BurgerMenu from './BurgerMenu';
+import LogoGreen from "./LogoGreen";
+import OpenIcon from './OpenIcon';
+import CloseIcon from "./CloseIcon";
 import Menu from "./Menu";
 
 class NavBar extends Component {
@@ -20,8 +22,15 @@ class NavBar extends Component {
     return (
       <NavWrapper>
         <StyledNavbar>
-          <Logo />
-          <BurgerMenu toggle={this.handleNavbar} color={this.state.navbarOpen} />
+          { !this.state.navbarOpen ? 
+          <>
+            <Logo />
+            <OpenIcon toggle={this.handleNavbar} color={this.state.navbarOpen} /> 
+          </> : <>
+            <LogoGreen />
+            <CloseIcon toggle={this.handleNavbar} color={this.state.navbarOpen} />
+          </>
+          }
           <Menu toggle={this.state} />
         </StyledNavbar>
       </NavWrapper>
@@ -42,7 +51,7 @@ const StyledNavbar = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
-  color: ${white};
-  background-color: ${green};
+  color: ${gray00};
+  background-color: ${darkGreen};
   padding: 13px 5%;
 `;
