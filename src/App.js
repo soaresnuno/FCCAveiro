@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components/macro';
 import GlobalStyle from './Global';
 
-import './styles.css';
-
 import NavBar from './components/NavBar/NavBar';
 import StyleSwitch from "./elements/StyleSwitch";
 
@@ -38,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <>
-      <ThemeProvider theme={this.state.darkmode ? themeDark : themeLight}>
+      <ThemeProvider theme={ this.state.darkmode ? themeDark : themeLight }>
         <Wrapper>
           <NavBar />
         </Wrapper>
@@ -55,5 +53,8 @@ class App extends Component {
 export default App;
 
 const Wrapper = styled.div`
-  background-color: ${ props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.primary};
+  width: 100vw;
+  height: 100vh;
+  transition: 0.3s ease all;
 `;

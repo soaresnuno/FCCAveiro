@@ -12,7 +12,7 @@ export default function Logo() {
 }
 
 const StyledLogo = styled.img`
-  height: 35px;
+  height: 30px;
   align-self: center;
   z-index: 15;
 `;

@@ -45,8 +45,4 @@ const StyledIcon = styled.div`
   & span:after {
     bottom: -10px;
   }
-
-  @media all and (max-width: 768px) {
-    display: inline;
-  }
 `;
