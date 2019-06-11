@@ -4,6 +4,7 @@ import GlobalStyle from './Global';
 
 import NavBar from './components/NavBar/NavBar';
 import StyleSwitch from "./elements/StyleSwitch";
+import SectionContainer from './components/SectionContainer/SectionContainer';
 
 import { gray00, gray85 } from "./utilities/colors"
 
@@ -39,6 +40,7 @@ class App extends Component {
       <ThemeProvider theme={ this.state.darkmode ? themeDark : themeLight }>
         <Wrapper>
           <NavBar />
+          <SectionContainer />
         </Wrapper>
       </ThemeProvider>
       <GlobalStyle />
