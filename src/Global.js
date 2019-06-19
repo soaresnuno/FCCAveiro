@@ -9,24 +9,20 @@ const GlobalStyle = createGlobalStyle`
   
   /* FCC Gydeline Fonts */
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   
   html {
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
-  *, *:before, *:after {
+  *, *: before, *: after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
   }
 
   body {
-    margin: 0;
-    padding: 0;
     ${custom};
-    overflow-x: hidden;
-    overflow-y: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 `;
 

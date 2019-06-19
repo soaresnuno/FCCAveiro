@@ -3,8 +3,10 @@ import styled, { ThemeProvider } from 'styled-components/macro';
 import GlobalStyle from './Global';
 
 import NavBar from './components/NavBar/NavBar';
+import CalltoAction from "./components/CalltoAction/CalltoAction"
+import About from "./components/About/About";
+
 import StyleSwitch from "./elements/StyleSwitch";
-import SectionContainer from './components/SectionContainer/SectionContainer';
 
 import { gray00, gray85 } from "./utilities/colors"
 
@@ -40,7 +42,8 @@ class App extends Component {
       <ThemeProvider theme={ this.state.darkmode ? themeDark : themeLight }>
         <Wrapper>
           <NavBar />
-          <SectionContainer />
+          <CalltoAction />
+          <About />
         </Wrapper>
       </ThemeProvider>
       <GlobalStyle />
@@ -55,8 +58,8 @@ class App extends Component {
 export default App;
 
 const Wrapper = styled.div`
+  position: absolute;
   background-color: ${props => props.theme.colors.primary};
-  width: 100vw;
-  height: 100vh;
   transition: 0.3s ease all;
+  z-index: -5;
 `;
