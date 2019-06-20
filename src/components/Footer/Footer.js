@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import {
-  FaHeart, FaFacebook, FaGithub, FaTwitter, FaSlack, FaRProject,
+  FaHeart, FaFacebook, FaGithub, FaTwitter, FaSlack,
 } from 'react-icons/fa';
 
 import { gray00, darkGreen } from '../../utilities';

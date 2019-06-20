@@ -29,5 +29,6 @@ const TextWrapper = styled.div`
 
   & h3 {
     padding-bottom: 60px;
+    color: ${props => props.theme.colors.primary}
   }
 `;

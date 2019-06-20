@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { custom } from "./utilities"
+import { custom } from '../utilities';
 
 const GlobalStyle = createGlobalStyle`
 

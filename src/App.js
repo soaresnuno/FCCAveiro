@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components/macro';
-import GlobalStyle from './Global';
+import GlobalStyle from "./styles/Global"
 
 import NavBar from './components/NavBar/NavBar';
 import CalltoAction from "./components/CalltoAction/CalltoAction"
 import About from "./components/About/About";
+import Provide from "./components/Provide/Provide"
 import Footer from "./components/Footer/Footer";
 
 import StyleSwitch from "./elements/StyleSwitch";
 
-import { gray00, gray85 } from "./utilities/colors"
-
-const themeLight = {
-  colors: {
-    primary: `${gray00}`,
-  }
-}
-
-const themeDark = {
-  colors: {
-    primary: `${gray85}`,
-  }
-}
+import { ThemeLight, ThemeDark } from './themes';
 
 class App extends Component {
   
@@ -40,11 +29,12 @@ class App extends Component {
   render() {
     return (
       <>
-      <ThemeProvider theme={ this.state.darkmode ? themeDark : themeLight }>
+      <ThemeProvider theme={ this.state.darkmode ? ThemeDark : ThemeLight }>
         <Wrapper>
           <NavBar />
           <CalltoAction />
           <About />
+          <Provide />
           <Footer />
         </Wrapper>
       </ThemeProvider>
@@ -61,7 +51,7 @@ export default App;
 
 const Wrapper = styled.div`
   position: absolute;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.background};
   transition: 0.3s ease all;
   z-index: -5;
 `;
