@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import CtaText from "./CtaText";
-import CtaImage from "./CtaImage"
+import CtaText from './CtaText';
+import CtaImage from './CtaImage';
 
 const CalltoAction = () => (
   <>
@@ -19,5 +19,5 @@ const Grid = styled.div`
   margin-top: 60px;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 700px;
+  grid-template-rows: 800px;
 `;

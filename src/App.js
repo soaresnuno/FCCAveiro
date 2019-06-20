@@ -5,6 +5,7 @@ import GlobalStyle from './Global';
 import NavBar from './components/NavBar/NavBar';
 import CalltoAction from "./components/CalltoAction/CalltoAction"
 import About from "./components/About/About";
+import Footer from "./components/Footer/Footer";
 
 import StyleSwitch from "./elements/StyleSwitch";
 
@@ -44,6 +45,7 @@ class App extends Component {
           <NavBar />
           <CalltoAction />
           <About />
+          <Footer />
         </Wrapper>
       </ThemeProvider>
       <GlobalStyle />
