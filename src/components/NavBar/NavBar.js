@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
 
-import { darkGreen, gray00 } from "../../utilities";
+import { darkGreen, gray00, elevation } from "../../utilities";
 
 import Logo from "./Logo";
 import LogoGreen from "./LogoGreen";
@@ -46,6 +46,7 @@ const NavWrapper = styled.div`
   left: 0;
   right: 0;
   z-index: 1;
+  ${elevation[1]};
 `;
 
 const StyledNavbar = styled.div` 

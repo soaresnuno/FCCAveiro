@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import image from "../../assets/about.png"
+import image from '../../assets/about.png';
 
 const AboutImage = () => (
   <>
@@ -13,7 +13,6 @@ export default AboutImage;
 
 const StyledImg = styled.img`
   position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
-  z-index: -1;
 `;

@@ -19,5 +19,5 @@ const Grid = styled.div`
   margin-top: 60px;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 800px;
+  grid-template-rows: minmax(840px, 1fr);
 `;

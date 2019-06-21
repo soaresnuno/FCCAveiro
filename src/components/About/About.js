@@ -16,6 +16,7 @@ export default About;
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 700px;
+  grid-template-rows: minmax(670px, 1fr);
   position: relative;
+  background-color: ${props => props.theme.colors.backgroundAlt};
 `;
