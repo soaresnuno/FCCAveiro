@@ -13,10 +13,10 @@ const Menu = (props) => {
     <MenuWrapper style={{ pointerEvents: props.toggle.navbarOpen ? 'all' : 'none' }}>
       <CheckoutLeft style={{ transform: x.interpolate(x => `translate3d(${x * -1}%, 0, 0)`) }}>
         <LinkWrapper>
-          <li><h5>Link 1</h5></li>
-          <li><h5>Link 2</h5></li>
-          <li><h5>Link 3</h5></li>
-          <li><h5>Link 4</h5></li>
+          <li><h1>Link 1</h1></li>
+          <li><h1>Link 2</h1></li>
+          <li><h1>Link 3</h1></li>
+          <li><h1>Link 4</h1></li>
         </LinkWrapper>
       </CheckoutLeft>
       <CheckoutRight style={{ transform: x.interpolate(x => `translate3d(${x}%, 0, 0)`) }} />
@@ -54,14 +54,14 @@ const CheckoutRight = styled(animated.div)`
 
 const LinkWrapper = styled.ul`
   margin-top: 50%;
-  margin-left: 25px;
+  margin-left: 90px;
 
   & li {
     list-style-type: none;
     color: ${darkGreen};
 
-    & h5 {
-      line-height: 45px;
+    & h1 {
+      line-height: 90px;
     }
   }
 `;

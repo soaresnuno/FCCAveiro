@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import CtaText from './CtaText';
 import CtaImage from './CtaImage';
 
+import { below } from '../../utilities';
+
 const CalltoAction = () => (
   <>
     <Grid>
@@ -20,4 +22,9 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: minmax(840px, 1fr);
+
+  ${below.xxl`
+    margin-top: 40px;
+    grid-template-rows: minmax(680px, 1fr);
+  `}
 `;

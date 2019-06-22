@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import CalltoAction from "./components/CalltoAction/CalltoAction"
 import About from "./components/About/About";
 import Provide from "./components/Provide/Provide"
+import Contacts from "./components/Contacts/Contacts"
 import Footer from "./components/Footer/Footer";
 
 import StyleSwitch from "./elements/StyleSwitch";
@@ -35,6 +36,7 @@ class App extends Component {
           <CalltoAction />
           <About />
           <Provide />
+          <Contacts />
           <Footer />
         </Wrapper>
       </ThemeProvider>

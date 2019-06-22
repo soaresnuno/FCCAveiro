@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import AboutImage from './AboutImage';
 import AboutText from './AboutText';
 
+import { below } from '../../utilities';
+
 const About = () => (
   <Grid>
     <AboutImage />
@@ -19,4 +21,8 @@ const Grid = styled.div`
   grid-template-rows: minmax(670px, 1fr);
   position: relative;
   background-color: ${props => props.theme.colors.backgroundAlt};
+
+  ${below.xxl`
+    grid-template-rows: minmax(570px, 1fr);
+  `}
 `;
