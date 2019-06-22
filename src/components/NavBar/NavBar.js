@@ -46,7 +46,7 @@ const NavWrapper = styled.div`
   left: 0;
   right: 0;
   z-index: 1;
-  ${elevation[1]};
+  ${elevation[2]};
 `;
 
 const StyledNavbar = styled.div` 

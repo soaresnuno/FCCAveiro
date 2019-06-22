@@ -1,30 +1,35 @@
-import React from 'react';
+/* eslint-disable import/prefer-default-export */
+
 import styled from 'styled-components';
+import { applyStyleModifiers } from 'styled-components-modifiers';
 
 import {
   elevation, darkGreen, lightGreen, gray00, gray90,
 } from '../utilities';
 
-const Button = props => (
-  <>
-    <StyledButton>{props.text}</StyledButton>
-  </>
-);
+const BUTTON_MODIFIERS = {
 
-export default Button;
+  square: () => `
+    border-radius: 0px;
+  `,
+};
 
-const StyledButton = styled.a`
+export const Button = styled.button`
+  border: none;
   color: ${gray00};
-  background-color: ${darkGreen};
+  background-image: linear-gradient(131deg, ${lightGreen}, ${darkGreen}, ${darkGreen}, ${darkGreen});
   cursor: pointer;
   font-size: 14px;
   padding: 14px 40px;
   border-radius: 50px;
   transition: all .4s ease-in-out;
+  background-size: 300% 100%;
 
-  &:hover{
-    ${elevation[2]};
-    background-color: ${lightGreen};
+  &:hover {
+    ${elevation[3]};
+    background-image: linear-gradient(131deg, ${lightGreen}, ${lightGreen}, ${darkGreen});
     color: ${gray90};
-}
+  }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;

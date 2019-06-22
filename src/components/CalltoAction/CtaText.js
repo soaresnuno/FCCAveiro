@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../../elements/Button';
+import { Button } from '../../elements';
 
 import { darkGreen } from '../../utilities';
 
@@ -9,7 +9,7 @@ const CtaText = () => (
   <TextWrapper>
     <h1>Lead From Front In Business Innovation</h1>
     <h3>Male bring land dominion over can yielding his moveth under of depend brought him is. Multiply which firmament deep make.</h3>
-    <Button text="Learn More" />
+    <Button>Learn More</Button>
   </TextWrapper>
 );
 

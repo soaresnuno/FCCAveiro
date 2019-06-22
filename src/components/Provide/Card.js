@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Button } from '../../elements/Button';
+
 import { gray10 } from '../../utilities';
 
 const Card = () => (
-  <Wrapper />
+  <Wrapper>
+    <Button modifiers="square">Modified</Button>
+  </Wrapper>
 );
 
 export default Card;
