@@ -1,44 +1,40 @@
-import React, { Component } from 'react'
-import styled from "styled-components";
+/* eslint-disable import/prefer-default-export */
 
-import { darkGreen, gray00, elevation } from "../../utilities";
+import React from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
 
-import Logo from "./Logo";
-import LogoGreen from "./LogoGreen";
-import OpenIcon from './OpenIcon';
-import CloseIcon from "./CloseIcon";
-import Menu from "./Menu";
+import { darkGreen, gray00, elevation } from '../../utilities';
 
-class NavBar extends Component {
-  state = {
-    navbarOpen: false
-  }
+import Logo from './Logo';
+import LogoGreen from './LogoGreen';
+import BurgerMenu from './Burgermenu';
+import Menu from './Menu';
 
-  handleNavbar = () => {
-    this.setState({ navbarOpen: !this.state.navbarOpen})
-  }
+const NavBar = ({ dropdownVisibility }) => (
+  <NavWrapper>
+    <StyledNavbar>
+      { !dropdownVisibility ? (
+        <>
+          <Logo />
+          <BurgerMenu />
+        </>
+      ) : (
+        <>
+          <LogoGreen />
+          <BurgerMenu />
+        </>
+      )}
+      <Menu />
+    </StyledNavbar>
+  </NavWrapper>
+);
 
-  render() {
-    return (
-      <NavWrapper>
-        <StyledNavbar>
-          { !this.state.navbarOpen ? 
-          <>
-            <Logo />
-            <OpenIcon toggle={this.handleNavbar} color={this.state.navbarOpen} /> 
-          </> : <>
-            <LogoGreen />
-            <CloseIcon toggle={this.handleNavbar} color={this.state.navbarOpen} />
-          </>
-          }
-          <Menu toggle={this.state} />
-        </StyledNavbar>
-      </NavWrapper>
-    )
-  }
-}
+const mapStateToProps = state => ({
+  dropdownVisibility: state.navbar.dropdownVisibility,
+});
 
-export default NavBar;
+export default connect(mapStateToProps)(NavBar);
 
 const NavWrapper = styled.div`
   position: fixed;
