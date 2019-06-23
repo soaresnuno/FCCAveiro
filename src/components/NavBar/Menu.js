@@ -43,7 +43,6 @@ const CheckoutLeft = styled(animated.div)`
   z-index: 5;
 `;
 
-
 const CheckoutRight = styled(animated.div)`
   position: relative;
   width: 70%;
