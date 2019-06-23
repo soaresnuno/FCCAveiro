@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import { useSpring, animated } from 'react-spring';
 
 import { gray10, darkGreen, below } from '../../utilities';
 
-const Menu = (props) => {
+const Menu = ({ dropdownVisibility }) => {
   const { x } = useSpring({
-    x: props.toggle.navbarOpen ? 0 : 100,
+    x: dropdownVisibility ? 0 : 100,
   });
 
   return (
-    <MenuWrapper style={{ pointerEvents: props.toggle.navbarOpen ? 'all' : 'none' }}>
+    <MenuWrapper style={{ pointerEvents: dropdownVisibility ? 'all' : 'none' }}>
       <CheckoutLeft style={{ transform: x.interpolate(x => `translate3d(${x * -1}%, 0, 0)`) }}>
         <LinkWrapper>
           <li><h1>Link 1</h1></li>
@@ -24,7 +25,11 @@ const Menu = (props) => {
   );
 };
 
-export default Menu;
+const mapStateToProps = state => ({
+  dropdownVisibility: state.navbar.dropdownVisibility,
+});
+
+export default connect(mapStateToProps)(Menu);
 
 const MenuWrapper = styled.div`
   position: fixed;
