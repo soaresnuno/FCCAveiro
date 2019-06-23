@@ -20,6 +20,6 @@ const StyledImg = styled.img`
   z-index: -1;
 
   ${below.xxl`
-    width: 50%;
+    width: 46%;
   `}
 `;

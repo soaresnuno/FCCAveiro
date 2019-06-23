@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Button } from '../../elements';
 
-import { darkGreen } from '../../utilities';
+import { darkGreen, below } from '../../utilities';
 
 const CtaText = () => (
   <TextWrapper>
@@ -19,6 +19,10 @@ const TextWrapper = styled.div`
   grid-column: 1 / 2;
   align-self: center;
   padding-left: 90px;
+
+  ${below.xxl`
+    padding-left: 70px;
+  `}
 
   & h1 {
     font-size: 40px;

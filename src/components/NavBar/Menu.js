@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 
-import { gray10, darkGreen } from '../../utilities';
+import { gray10, darkGreen, below } from '../../utilities';
 
 const Menu = (props) => {
   const { x } = useSpring({
@@ -62,6 +62,11 @@ const LinkWrapper = styled.ul`
 
     & h1 {
       line-height: 90px;
+
+      ${below.xxl`
+        font-size: 30px;
+        line-height: 55px;
+      `}
     }
   }
 `;

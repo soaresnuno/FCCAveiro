@@ -25,6 +25,6 @@ const Grid = styled.div`
 
   ${below.xxl`
     margin-top: 40px;
-    grid-template-rows: minmax(680px, 1fr);
+    grid-template-rows: minmax(660px, 1fr);
   `}
 `;

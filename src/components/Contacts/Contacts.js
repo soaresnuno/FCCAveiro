@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { gray00, darkGreen } from '../../utilities';
+import { gray00, darkGreen, below } from '../../utilities';
 
 class Contacts extends Component {
   state = {
@@ -56,6 +56,10 @@ const ContactsWrapper = styled.div`
   padding-left: 40px;
   padding: 50px 90px;
   background-color: ${props => props.theme.colors.backgroundAlt};
+
+  ${below.xxl`
+    padding: 50px 70px;
+  `}
 `;
 
 const FormWrapper = styled.div`

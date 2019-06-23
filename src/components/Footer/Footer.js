@@ -5,7 +5,7 @@ import {
   FaHeart, FaFacebook, FaGithub, FaTwitter, FaSlack,
 } from 'react-icons/fa';
 
-import { gray00, darkGreen } from '../../utilities';
+import { gray00, darkGreen, below } from '../../utilities';
 
 const Footer = () => (
   <Grid>
@@ -44,6 +44,10 @@ const TextWrapper = styled.div`
   align-self: center;
   padding-left: 90px;
   font-size: 15px;
+
+  ${below.xxl`
+    padding-left: 70px;
+  `}
 `;
 
 const LinksWrapper = styled.div`
