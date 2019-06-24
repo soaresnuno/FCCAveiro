@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import CtaText from './CtaText';
-import CtaImage from './CtaImage';
+import CtaText from "./CtaText";
+import CtaImage from "./CtaImage";
 
-import { below } from '../../utilities';
+import { below } from "../../utilities";
 
-const CalltoAction = () => (
+const CalltoAction = props => (
   <>
     <Grid>
-      <CtaText />
+      <CtaText data={props.data ? props.data.top_banner : ""} />
     </Grid>
-    <CtaImage />
+    <CtaImage data={props.data ? props.data.top_banner : ""} />
   </>
 );
 

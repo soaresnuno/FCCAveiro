@@ -1,37 +1,57 @@
-import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { connect } from "react-redux";
 
-import NavBar from '../components/NavBar/NavBar';
-import CalltoAction from '../components/CalltoAction/CalltoAction';
-import About from '../components/About/About';
-import Provide from '../components/Provide/Provide';
-import Contacts from '../components/Contacts/Contacts';
-import Footer from '../components/Footer/Footer';
+import { getAllData } from "../store/Content/actions";
 
-import StyleSwitch from '../elements/StyleSwitch';
+import { bindActionCreators } from "redux";
 
-import { ThemeLight, ThemeDark } from '../themes';
+import NavBar from "../components/NavBar/NavBar";
+import CalltoAction from "../components/CalltoAction/CalltoAction";
+import About from "../components/About/About";
+import Provide from "../components/Provide/Provide";
+import Contacts from "../components/Contacts/Contacts";
+import Footer from "../components/Footer/Footer";
 
-const MainPage = ({ darkmode }) => (
-  <ThemeProvider theme={darkmode ? ThemeDark : ThemeLight}>
-    <Wrapper>
-      <NavBar />
-      <CalltoAction />
-      <About />
-      <Provide />
-      <Contacts />
-      <Footer />
-      <StyleSwitch />
-    </Wrapper>
-  </ThemeProvider>
-);
+import StyleSwitch from "../elements/StyleSwitch";
+
+import { ThemeLight, ThemeDark } from "../themes";
+
+class MainPage extends Component {
+  componentDidMount() {
+    const { getAllData } = this.props;
+    getAllData();
+  }
+  render() {
+    const { darkmode } = this.props;
+    return (
+      <ThemeProvider theme={darkmode ? ThemeDark : ThemeLight}>
+        <Wrapper>
+          <NavBar />
+          <CalltoAction data={this.props.content} />
+          <About data={this.props.content} />
+          <Provide data={this.props.content} />
+          <Contacts />
+          <Footer />
+          <StyleSwitch />
+        </Wrapper>
+      </ThemeProvider>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ getAllData }, dispatch);
 
 const mapStateToProps = state => ({
   darkmode: state.darkmode.darkmode,
+  content: state.content.content
 });
 
-export default connect(mapStateToProps)(MainPage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainPage);
 
 const Wrapper = styled.div`
   position: absolute;

@@ -1,13 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import image from '../../assets/banner_bg_alt.png';
+import { below } from "../../utilities";
 
-import { below } from '../../utilities';
-
-const CtaImage = () => (
+const CtaImage = props => (
   <>
-    <StyledImg src={image} alt="" />
+    <StyledImg src={props.data.imagem ? props.data.imagem.url : ""} alt="" />
   </>
 );
 
