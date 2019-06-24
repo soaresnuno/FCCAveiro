@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import NavBar from '../components/NavBar/NavBar';
 import CalltoAction from '../components/CalltoAction/CalltoAction';
@@ -11,27 +12,41 @@ import Footer from '../components/Footer/Footer';
 
 import StyleSwitch from '../elements/StyleSwitch';
 
+import { getData } from '../store/Api/actions';
+
 import { ThemeLight, ThemeDark } from '../themes';
 
-const MainPage = ({ darkmode }) => (
-  <ThemeProvider theme={darkmode ? ThemeDark : ThemeLight}>
-    <Wrapper>
-      <NavBar />
-      <CalltoAction />
-      <About />
-      <Provide />
-      <Contacts />
-      <Footer />
-      <StyleSwitch />
-    </Wrapper>
-  </ThemeProvider>
-);
+class MainPage extends PureComponent {
+  componentDidMount() {
+    const { getData } = this.props;
+    getData();
+  }
+
+  render() {
+    return (
+      <ThemeProvider theme={this.darkmode ? ThemeDark : ThemeLight}>
+        <Wrapper>
+          <NavBar />
+          <CalltoAction />
+          <About />
+          <Provide />
+          <Contacts />
+          <Footer />
+          <StyleSwitch />
+        </Wrapper>
+      </ThemeProvider>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   darkmode: state.darkmode.darkmode,
+  data: state.data,
 });
 
-export default connect(mapStateToProps)(MainPage);
+const mapDispatchToProps = dispatch => bindActionCreators({ getData }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
 
 const Wrapper = styled.div`
   position: absolute;
