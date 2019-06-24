@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Button } from '../../elements';
+import { Button } from "../../elements";
 
-import { darkGreen } from '../../utilities';
+import { darkGreen } from "../../utilities";
 
-const ProviderText = () => (
+const ProviderText = props => (
   <Wrapper>
-    <h1>We Provide Best Services</h1>
-    <p>Male bring land dominion over can't yielding. His order moveth under of dry brought him is. Multiply which firmament deep make. Male bring land. Dominion over can't yielding. His moveth under of dry brought him is. Multiply which firmament deep make.</p>
-    <Button>Load More</Button>
+    <h1>{props.data.title && props.data.title}</h1>
+    <p>{props.data.description && props.data.description}</p>
+    <Button href={props.data.link ? props.data.link : ""}>Load More</Button>
   </Wrapper>
 );
 
@@ -26,6 +26,6 @@ const Wrapper = styled.div`
 
   & p {
     padding-bottom: 40px;
-    color: ${props => props.theme.colors.primary}
+    color: ${props => props.theme.colors.primary};
   }
 `;

@@ -1,26 +1,34 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Button } from '../../elements';
+import { Button } from "../../elements";
 
-import { gray10, darkGreen, elevation } from '../../utilities';
+import { gray10, darkGreen, elevation } from "../../utilities";
 
-const Card = () => (
-  <Wrapper>
-    <h2>Business Opportunity</h2>
-    <p>Show wherein form yielding whala readeat gathered wherein moved. Behold may be winged created that Won't theya are second god give</p>
-    <ButtonWrapper>
-      <Button modifiers="square">Modified</Button>
-    </ButtonWrapper>
-  </Wrapper>
+const Card = props => (
+  <>
+    {console.log(props.data.cards)}
+    {props.data &&
+      props.data.cards.map(d => (
+        <Wrapper>
+          <h2>{d.title}</h2>
+          <p>{d.description}</p>
+          <ButtonWrapper>
+            <Button modifiers="square" href={d.link}>
+              Modified
+            </Button>
+          </ButtonWrapper>
+        </Wrapper>
+      ))}
+  </>
 );
 
 export default Card;
 
 const Wrapper = styled.div`
   position: relative;
-  grid-column: 3 / 4;
   align-self: center;
+  // grid-column: 3 / 4;
   justify-self: center;
   background-color: ${gray10};
   height: 90%;

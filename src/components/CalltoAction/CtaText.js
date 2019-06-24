@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Button } from '../../elements';
+import { Button } from "../../elements";
 
-import { darkGreen, below } from '../../utilities';
+import { darkGreen, below } from "../../utilities";
 
-const CtaText = () => (
+const CtaText = props => (
   <TextWrapper>
-    <h1>Lead From Front In Business Innovation</h1>
-    <h3>Male bring land dominion over can yielding his moveth under of depend brought him is. Multiply which firmament deep make.</h3>
-    <Button>Learn More</Button>
+    <h1>{props.data.title && props.data.title}</h1>
+    <h3>{props.data.sub_title && props.data.sub_title}</h3>
+    <Button href={props.data.saber && props.data.saber}>Learn More</Button>
   </TextWrapper>
 );
 
@@ -33,6 +33,6 @@ const TextWrapper = styled.div`
 
   & h3 {
     padding-bottom: 60px;
-    color: ${props => props.theme.colors.primary}
+    color: ${props => props.theme.colors.primary};
   }
 `;

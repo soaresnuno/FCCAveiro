@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import AboutImage from './AboutImage';
-import AboutText from './AboutText';
+import AboutImage from "./AboutImage";
+import AboutText from "./AboutText";
 
-import { below } from '../../utilities';
+import { below } from "../../utilities";
 
-const About = () => (
+const About = props => (
   <Grid>
-    <AboutImage />
-    <AboutText />
+    <AboutImage data={props.data ? props.data.first_block_content : ""} />
+    <AboutText data={props.data ? props.data.first_block_content : ""} />
   </Grid>
 );
 

@@ -1,13 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import image from '../../assets/about.png';
+import { below } from "../../utilities";
 
-import { below } from '../../utilities';
-
-const AboutImage = () => (
+const AboutImage = props => (
   <>
-    <StyledImg src={image} alt="" />
+    <StyledImg src={props.data.imagem ? props.data.imagem.url : ""} alt="" />
   </>
 );
 
