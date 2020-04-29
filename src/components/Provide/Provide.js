@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ProviderText from "./ProviderText";
 import Card from "./Card";
 
-import { below, gray10, darkGreen, elevation } from "../../utilities";
+import { below } from "../../utilities";
 
 const Provide = props => (
   <Grid>
